@@ -12,6 +12,10 @@
   font-family: 'Outfit', sans-serif;
 }
 
+body, html{
+  scroll-behavior: smooth;
+}
+
 .prata-regular {
   font-family: "Prata", serif;
   font-weight: 400;
@@ -20,4 +24,15 @@
 
 a.active hr {
   display: block;
+}
+
+::-webkit-scrollbar{
+  display: none;
+}
+
+@media (max-width: 640px) {
+  a.active {
+    background-color: black;
+    color: white;
+  }
 }
