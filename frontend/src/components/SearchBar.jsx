@@ -26,7 +26,7 @@ const SearchBar = () => {
         <img src={assets.search_icon} className='w-4' alt="" />
       </div>
 
-      <img src={assets.cross_icon} className='inline w-3 cursor-pointer' onClick={() => setShowSearch(false)} alt="" />
+      <img src={assets.cross_icon} className='inline w-8 cursor-pointer p-2 rounded-full hover:bg-gray-200 transition-all duration-300' onClick={() => setShowSearch(false)} alt="" />
     </div>
   ) : null
 }

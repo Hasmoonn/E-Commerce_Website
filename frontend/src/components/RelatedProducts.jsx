@@ -6,8 +6,8 @@ import ProductItem from '../components/ProductItem'
 
 const RelatedProducts = ({category, subCategory}) => {
 
-  const {products} = useContext(ShopContext)
-  const [ related, setRelated] = useState([])
+  const { products } = useContext(ShopContext)
+  const [related, setRelated] = useState([])
 
   useEffect(() =>{
     if (products.length > 0) {
