@@ -49,7 +49,8 @@ const PlaceOrder = () => {
 
         <div className='mt-12'>
           <Title text1={'PAYMENT'} text2={'METHOD'} />
-          {/* Payment method selection */}
+
+          {/* -------- Payment method selection --------------------- */}
           <div className='flex gap-3 flex-col lg:flex-row'>
             <div className='flex items-center gap-3 border p-2 px-3 cursor-pointer' onClick={() => setMethod('stripe')}>
               <p className={`min-w-3.5 h-3.5 border rounded-full ${method === 'stripe' ? 'bg-green-400': ''}`}></p>

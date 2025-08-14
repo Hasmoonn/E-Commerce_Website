@@ -85,6 +85,7 @@ const shopContextProvider = (props) => {
     return totalAmount
   }
 
+
   const value = {
     products,
     currency,
@@ -99,6 +100,7 @@ const shopContextProvider = (props) => {
     navigate
   }
 
+  
   return(
     <ShopContext.Provider value={value}>
       {props.children}
