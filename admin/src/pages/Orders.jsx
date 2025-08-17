@@ -39,6 +39,7 @@ const Orders = ({token}) => {
 
       if (response.data.success) {
         await fetchAllOrders()
+        toast.success(response.data.message)
       } else {
         toast.error(response.data.message)
       }
