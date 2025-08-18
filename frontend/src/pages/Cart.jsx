@@ -70,7 +70,7 @@ const Cart = () => {
           <CartTotal />
 
           <div className='w-full text-end'>
-            <button className='bg-black text-white text-sm my-8 px-8 py-3' onClick={() => navigate('/place-order')}>PROCEED TO CHECKOUT</button>
+            <button disabled={cartData.length === 0} aria-disabled={cartData.length === 0} className={`bg-black text-white text-sm my-8 px-8 py-3 ${cartData.length === 0 ? 'cursor-not-allowed' : ''}`} onClick={() => navigate('/place-order')}>PROCEED TO CHECKOUT</button>
           </div>
         </div>
       </div>
