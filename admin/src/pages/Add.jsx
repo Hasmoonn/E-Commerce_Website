@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import {assets} from '../assets/admin_assets/assets.js'
-import {backendUrl} from '../App.jsx'
+import { backendUrl, skeletonLoader } from '../App.jsx'
 import axios from 'axios'
 import { toast } from 'react-toastify'
 
@@ -20,9 +20,12 @@ const Add = ({token}) => {
   const [bestseller, setBestseller] = useState(false)
   const [sizes, setSizes] = useState([])
 
+  const [loading, setLoading] = useState(false)
+
   const onSubmitHandler = async (e) => {
 
     try {
+
       e.preventDefault();
 
       const formData = new FormData()
@@ -39,6 +42,8 @@ const Add = ({token}) => {
       image2 && formData.append('image2', image2)
       image3 && formData.append('image3', image3)
       image4 && formData.append('image4', image4)
+
+      setLoading(true)
 
       const response = await axios.post(backendUrl + '/api/product/add', formData, {headers:{token}})
 
@@ -58,10 +63,13 @@ const Add = ({token}) => {
     } catch (error) {
         console.log(error);
         toast.error(error.message)        
+    } finally{
+      setLoading(false)
     }
   }
 
   return (
+    loading ? (skeletonLoader()) : (
     <form onSubmit={onSubmitHandler} className='flex w-full flex-col gap-3 items-start'>
       <div>
         <p className='mb-2'>Upload Image</p>
@@ -162,7 +170,7 @@ const Add = ({token}) => {
       </div>
 
       <button type='submit' className='w-28 py-3 mt-4 bg-black text-white'>ADD</button>
-    </form>
+    </form> )
   )
 }
 

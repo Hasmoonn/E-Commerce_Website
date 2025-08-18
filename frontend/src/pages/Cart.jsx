@@ -6,7 +6,7 @@ import CartTotal from '../components/CartTotal';
 
 const Cart = () => {
 
-  const { cartItems, products, currency, updateQuantity, navigate } = useContext(ShopContext);
+  const { cartItems, products, currency, updateQuantity, navigate, loading, skeletonLoader } = useContext(ShopContext);
 
   const [cartData, setCartData] = useState([]);
 
@@ -40,7 +40,7 @@ const Cart = () => {
 
       <div>
         {
-          cartData.map((item, index) => {
+          loading ? (skeletonLoader()) : (cartData.map((item, index) => {
             const productData = products.find((product) => product._id === item._id)
 
             return (
@@ -61,7 +61,8 @@ const Cart = () => {
                 <img src={assets.bin_icon} className='w-4 mr-4 sm:w-5 cursor-pointer' onClick={() => updateQuantity(item._id, item.size, 0)} alt="" />
               </div>
             )
-          })
+          }))
+          
         }
       </div>
 

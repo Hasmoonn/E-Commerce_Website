@@ -13,6 +13,7 @@ const shopContextProvider = (props) => {
   const [search, setSearch] = useState('')
   const [showSearch, setShowSearch] = useState(false);
   const [cartItems, setCartItems] = useState({})
+  const [loading, setLoading] = useState(false) 
   const navigate = useNavigate()
 
   const [products, setProducts] = useState([])
@@ -130,6 +131,9 @@ const shopContextProvider = (props) => {
   const getProductsData = async () => {
 
     try {
+
+      setLoading(true)
+
       const response = await axios.get(backendUrl + '/api/product/list')
 
       if (response.data.success) {
@@ -140,6 +144,8 @@ const shopContextProvider = (props) => {
     } catch (error) {
         console.log(error);
         toast.error(error.message)
+    } finally{
+      setLoading(false)
     }
   }
 
@@ -171,6 +177,17 @@ const shopContextProvider = (props) => {
     }
   }, [])
 
+
+  // Skeleton Loader Component
+  const skeletonLoader = () => (
+    <div className="inset-0 flex justify-center items-center bg-white/70 z-50 min-h-[320px]">
+      <div className="relative w-16 h-16">
+        <div className="absolute w-16 h-16 border-4 border-pink-500 rounded-full border-t-transparent animate-spin"></div>
+        <div className="absolute w-12 h-12 border-4 border-pink-300 rounded-full border-b-transparent animate-spin [animation-duration:1.5s] left-2 top-2"></div>
+      </div>
+    </div>
+  );
+
   const value = {
     products, currency,
     backendUrl, delivery_fee,
@@ -182,7 +199,8 @@ const shopContextProvider = (props) => {
     updateQuantity,
     getCartAmount,
     navigate, 
-    token, setToken
+    token, setToken,
+    loading, setLoading, skeletonLoader
   }
 
   

@@ -1,18 +1,21 @@
 import React, { useEffect, useState } from 'react'
-import {backendUrl, currency} from '../App'
+import {backendUrl, currency, skeletonLoader} from '../App'
 import axios from 'axios'
 import { toast } from 'react-toastify'
 
 const List = ({token}) => {
 
   const [list, setList] = useState([])
+  const [loading, setLoading] = useState(false)
 
   const fetchList = async () => {
 
-    try {   
+    try { 
+      setLoading(true)  
+
       const response = await axios.get(backendUrl + '/api/product/list')
 
-      console.log(response);
+      // console.log(response);
       
       if (response.data.success) {
         setList(response.data.products)
@@ -23,12 +26,16 @@ const List = ({token}) => {
     } catch (error) {
         console.log(error);
         toast.error(error.message)
+    } finally{
+      setLoading(false)
     }
   }
 
   const removeProduct = async (id) => {
 
     try {
+      setLoading(true)
+
       const response = await axios.post(backendUrl + '/api/product/remove', {id}, {headers: {token}})
 
       if (response.data.success) {
@@ -41,6 +48,8 @@ const List = ({token}) => {
     } catch (error) {
         console.log(error);
         toast.error(error.message)
+    } finally{
+      setLoading(false)
     }
   }
 
@@ -66,7 +75,7 @@ const List = ({token}) => {
         {/* product list  */}
 
         {
-          list.map((item, index) => (
+          loading ? (skeletonLoader()) : (list.map((item, index) => (
             <div key={index} className='grid grid-cols-[1fr_3fr_1fr] md:grid-cols-[1fr_3fr_1fr_1fr_1fr] items-center gap-2 py-1 px-2 border text-sm'>
               <img className='w-12' src={item.image[0]} alt="" />
               <p>{item.name}</p>
@@ -74,7 +83,7 @@ const List = ({token}) => {
               <p>{currency}{item.price}</p>
               <p onClick={() => removeProduct(item._id)} className='text-right md:text-center text-lg cursor-pointer'>X</p>
             </div>
-          ))
+          )))
         }
       </div>
     </>

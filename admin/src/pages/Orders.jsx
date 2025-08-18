@@ -1,12 +1,13 @@
 import React, { useEffect, useState } from 'react'
 import axios from 'axios'
-import {backendUrl, currency} from '../App'
+import {backendUrl, currency, skeletonLoader} from '../App'
 import { toast } from 'react-toastify'
 import { assets } from '../assets/admin_assets/assets'
 
 const Orders = ({token}) => {
 
   const [orders, setOrders] = useState([])
+  const [loading, setLoading] = useState(false)
 
   const fetchAllOrders = async () =>{
 
@@ -14,6 +15,8 @@ const Orders = ({token}) => {
       if (!token) {
         return null
       }
+
+      setLoading(true)
 
       const response = await axios.post(backendUrl + '/api/order/list', {}, {headers: {token}})
 
@@ -28,6 +31,8 @@ const Orders = ({token}) => {
     } catch (error) {
         console.log(error);
         toast.error(error.message)
+    } finally{
+      setLoading(false)
     }
   }
 
@@ -60,7 +65,7 @@ const Orders = ({token}) => {
 
       <div>
         {
-          orders.map((order, index) => (
+          loading ? (skeletonLoader()) : (orders.map((order, index) => (
             <div className={'grid grid-cols-1 sm:grid-cols-[0.5fr_2fr_1fr] lg:grid-cols-[0.5fr_2fr_1fr_1fr_1fr] gap-3 items-start border-2 border-gray-200 p-5 md:p-8 my-3 md:my-4 text-xs sm:text-sm text-gray-700'} key={index}>
               <img className='w-12' src={assets.parcel_icon} alt="" />
               <div>
@@ -114,7 +119,8 @@ const Orders = ({token}) => {
               <option value="Delivered">Delivered</option>
             </select>
           </div>            
-          ))
+          )))
+          
         }
       </div>
     </div>

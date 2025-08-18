@@ -6,7 +6,7 @@ import ProductItem from '../components/ProductItem'
 
 const RelatedProducts = ({category, subCategory}) => {
 
-  const { products } = useContext(ShopContext)
+  const { products, loading, skeletonLoader } = useContext(ShopContext)
   const [related, setRelated] = useState([])
 
   useEffect(() =>{
@@ -26,13 +26,16 @@ const RelatedProducts = ({category, subCategory}) => {
         <Title text1={'RELATED'} text2={'PRODUCTS'} /> 
       </div>
 
-      <div className='grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4 gap-y-6'>
+      {
+        loading ? (skeletonLoader()) : (<div className='grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4 gap-y-6'>
         {
           related.map((item, index) => (
             <ProductItem key={index} image={item.image} name={item.name} price={item.price} id={item._id} />
           ))
         }
-      </div>
+      </div>)
+      }
+      
     </div>
   )
 }

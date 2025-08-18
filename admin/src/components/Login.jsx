@@ -1,6 +1,6 @@
 import React from "react";
 import { useState } from "react";
-import {backendUrl} from '../App'
+import {backendUrl, skeletonLoader} from '../App'
 import axios from "axios";
 import { toast } from 'react-toastify'
 
@@ -8,10 +8,13 @@ const Login = ({setToken}) => {
 
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
+  const [loading, setLoading] = useState(false)
 
   const onSubmitHandler = async (e) => {
 
     try {
+      setLoading(true)
+
       e.preventDefault()
 
       const response = await axios.post(backendUrl + '/api/user/admin', {email, password})
@@ -24,10 +27,13 @@ const Login = ({setToken}) => {
     } catch (error) {
         console.log(error);
         toast.error(error.message)
+    } finally {
+      setLoading(false)
     }
-
   }
+
   return (
+    loading ? (skeletonLoader()) : (
     <div className="min-h-screen flex items-center justify-center w-full">
       <div className="bg-white shadow-md rounded-lg px-8 py-6 max-w-md">
         <h1 className="text-2xl font-bold mb-4">Admin Panel</h1>
@@ -63,7 +69,7 @@ const Login = ({setToken}) => {
         </form>
       </div>
     </div>
-  );
+  ))
 };
 
 export default Login;

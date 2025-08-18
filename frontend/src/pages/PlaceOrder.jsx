@@ -8,7 +8,7 @@ import { toast } from 'react-toastify';
 
 const PlaceOrder = () => {
 
-  const { products, backendUrl, delivery_fee, cartItems, setCartItems, getCartAmount, navigate, token } = useContext(ShopContext);
+  const { products, backendUrl, delivery_fee, cartItems, setCartItems, getCartAmount, navigate, token, loading, setLoading, skeletonLoader } = useContext(ShopContext);
 
   const [method, setMethod] = useState('cod');
 
@@ -36,6 +36,8 @@ const PlaceOrder = () => {
     e.preventDefault();
     
     try {
+      setLoading(true)
+      
       let orderItems = []
 
       for(const items in cartItems){
@@ -101,10 +103,12 @@ const PlaceOrder = () => {
     } catch (error) {
         console.log(error);
         toast.error(error.message)
+    } finally{
+      setLoading(false)
     }
   }
 
-  return (
+  return ( loading ? (skeletonLoader()) : (
     <form onSubmit={onSubmitHandler} className='flex flex-col sm:flex-row justify-between gap-4 pt-5 sm:pt-14 min-h-[80vh] border-t'>
       {/* left side  */}
       <div className='flex flex-col gap-4 w-full sm:max-w-[480px]'>
@@ -161,7 +165,7 @@ const PlaceOrder = () => {
           </div>
         </div>
       </div>
-    </form>
+    </form> )
   )
 }
 
