@@ -74,8 +74,8 @@ const Add = ({token}) => {
       <div>
 
         <div className='mb-4 inline-flex gap-3 items-center'>
-          <h3 className='font-semibold text-amber-600'>Add Product</h3>
-          <hr className='w-8 h-1 rounded-md bg-amber-600'/>
+          <h3 className='font-semibold text-amber-700'>Add Product</h3>
+          <hr className='w-8 h-1 rounded-md bg-amber-700'/>
         </div>
 
         <p className='mb-2'>Upload Image</p>

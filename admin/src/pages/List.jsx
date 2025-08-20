@@ -60,8 +60,8 @@ const List = ({token}) => {
   return (
     <>
       <div className='mb-4 inline-flex gap-3 items-center'>
-        <h3 className='font-semibold text-amber-600'>All Products List</h3>
-        <hr className='w-8 h-1 rounded-md bg-amber-600'/>
+        <h3 className='font-semibold text-amber-700'>All Products List</h3>
+        <hr className='w-8 h-1 rounded-md bg-amber-700'/>
       </div>
 
       <div className='flex flex-col gap-2'>
