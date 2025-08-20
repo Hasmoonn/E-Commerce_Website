@@ -50,8 +50,8 @@ const Cart = () => {
                   <div>
                     <p className='text-xs sm:text-lg font-medium'>{productData.name}</p>
                     <div className='flex items-center gap-5 mt-2'>
-                      <p>{currency}{productData.price}</p>
-                      <p className='px-2 sm:px-3 sm:py-1 border bg-slate-50'>{item.size}</p>
+                      <p>{currency} {productData.price}</p>
+                      <p className='px-2 sm:px-3 sm:py-1 border bg-amber-400 font-medium rounded-md'>{item.size}</p>
                     </div>
                   </div>
                 </div>
@@ -71,7 +71,7 @@ const Cart = () => {
           <CartTotal />
 
           <div className='w-full text-end'>
-            <button disabled={cartData.length === 0} aria-disabled={cartData.length === 0} className={`bg-black text-white text-sm my-8 px-8 py-3 ${cartData.length === 0 ? 'cursor-not-allowed' : ''}`} onClick={() => navigate('/place-order')}>PROCEED TO CHECKOUT</button>
+            <button disabled={cartData.length === 0} aria-disabled={cartData.length === 0} className={`bg-amber-600 text-white text-sm my-8 px-8 py-3 ${cartData.length === 0 ? 'cursor-not-allowed' : ''}`} onClick={() => {navigate('/place-order'); scrollTo(0,0)}}>PROCEED TO CHECKOUT</button>
           </div>
         </div>
       </div>

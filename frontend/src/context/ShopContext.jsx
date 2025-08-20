@@ -7,7 +7,7 @@ export const ShopContext = createContext();
 
 const shopContextProvider = (props) => {
 
-  const currency = '$';
+  const currency = 'Lkr';
   const delivery_fee = 10;
   const backendUrl = import.meta.env.VITE_BACKEND_URL
   const [search, setSearch] = useState('')
@@ -182,8 +182,8 @@ const shopContextProvider = (props) => {
   const skeletonLoader = () => (
     <div className="inset-0 flex justify-center items-center bg-white/70 z-50 min-h-[320px]">
       <div className="relative w-16 h-16">
-        <div className="absolute w-16 h-16 border-4 border-pink-500 rounded-full border-t-transparent animate-spin"></div>
-        <div className="absolute w-12 h-12 border-4 border-pink-300 rounded-full border-b-transparent animate-spin [animation-duration:1.5s] left-2 top-2"></div>
+        <div className="absolute w-16 h-16 border-4 border-amber-600 rounded-full border-t-transparent animate-spin"></div>
+        <div className="absolute w-12 h-12 border-4 border-amber-300 rounded-full border-b-transparent animate-spin [animation-duration:1.5s] left-2 top-2"></div>
       </div>
     </div>
   );

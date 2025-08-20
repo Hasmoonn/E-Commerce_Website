@@ -62,8 +62,8 @@ const Orders = ({token}) => {
   return (
     <div>
       <div className='mb-2 inline-flex gap-3 items-center'>
-        <h3 className='font-semibold text-amber-500'>Order Page</h3>
-        <hr className='w-8 h-1 rounded-md bg-amber-500'/>
+        <h3 className='font-semibold text-amber-600'>Order Page</h3>
+        <hr className='w-8 h-1 rounded-md bg-amber-600'/>
       </div>
 
       <div>

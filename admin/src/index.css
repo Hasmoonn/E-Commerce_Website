@@ -10,12 +10,12 @@
 }
 
 .active{
-  background-color: #fec25bbe;
-  border-color: #f59e0b;
+  background-color: #ffa2009b;
+  border-color: #d97706;
 }
 
 select, input, textarea{
-  border: 1px solid #fcd34d;
+  border: 1px solid #d97706;
   outline-color: #f59e0b;
   border-radius: 4px;
 }

@@ -86,10 +86,10 @@ const Collection = () => {
         </p>
 
         {/* Category filter  */}
-        <div className={`border border-gray-300 pl-5 py-3 mt-6 ${showFilter ? '' : 'hidden'} sm:block`}>
+        <div className={`border border-gray-300 pl-5 py-3 mt-6 bg-gray-50 ${showFilter ? '' : 'hidden'} sm:block`}>
           <p className='mb-3 text-sm font-medium'>CATEGORIES</p>
           
-          <div className='flex flex-col gap-2 text-sm font-light text-gray-700'>
+          <div className='flex flex-col gap-2 text-sm font-light text-gray-800'>
             <p className='flex gap-2'>
               <input className='w-3' type="checkbox" value={'Men'} onChange={toggleCategory} /> Men
             </p>

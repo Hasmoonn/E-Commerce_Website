@@ -32,7 +32,14 @@ a.active hr {
 
 @media (max-width: 640px) {
   a.active {
-    background-color: black;
+    background-color: #f59e0b;
     color: white;
   }
+}
+
+
+select, input, textarea{
+  border: 1px solid #fcd34d;
+  outline-color: #f59e0b;
+  border-radius: 4px;
 }

@@ -12,20 +12,20 @@ const About = () => {
       </div>
 
       <div className='my-10 flex flex-col md:flex-row gap-16'>
-        <img className='w-full md:max-w-[450px]' src={assets.about_img} alt="" />
+        <img className='w-full md:max-w-[450px] animate-fadeInLeft shadow-lg' src={assets.about_img} alt="" />
 
-        <div className='flex flex-col justify-center gap-6 md:w-2/4 text-gray-600'>
+        <div className='flex flex-col justify-center gap-6 md:w-2/4 text-gray-600 animate-fadeInRight'>
           <p>
-            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Architecto ex quaerat eaque laborum aliquid velit iure animi doloribus quae fugit quis cupiditate alias, at accusantium esse officia ut? Eius, deserunt.
+            At Luxivo, we believe shopping should be more than just a transaction—it should be an experience that inspires and excites. That's why we bring together a carefully curated collection of quality products designed to match your lifestyle, from the latest trends to timeless essentials. Every item in our store is chosen with care, ensuring that you always get the perfect balance of style, quality, and affordability.
           </p>
 
           <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Ex mollitia impedit sint dolore explicabo facilis vel aliquid temporibus, officiis molestias recusandae optio aspernatur consequuntur illum quae nostrum possimus eveniet quibusdam reprehenderit quos fugiat, veniam nulla neque omnis? Eius dolorum fugit doloribus ullam iste quisquam inventore.
+            We are passionate about creating a space where you can shop with confidence and convenience. From browsing our collections to unboxing your order, we are committed to delivering a seamless experience backed by exceptional customer service. At Luxivo, it's not just about what you buy—it's about feeling inspired, confident, and part of a community that values trust and style.
           </p>
 
           <b className='text-gray-800'>Our Mission</b>
           <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Temporibus aperiam voluptas eligendi labore. Aspernatur animi dignissimos facilis velit voluptas optio ab ex ullam. A, reiciendis?
+            Our mission is to make fashion and lifestyle accessible to everyone by offering quality, value, and style in every purchase. We aim to build a community where customers feel confident, inspired, and satisfied with their choices.
           </p>
         </div>
       </div>
@@ -34,20 +34,20 @@ const About = () => {
         <Title text1={'WHY'} text2={'CHOOSE US'} />
       </div>
 
-      <div className='flex flex-col md:flex-row text-sm mb-20'>
-        <div className='border px-10 md:px-16 py-8 sm:py-20 flex flex-col gap-5'>
-          <b>Quality Assurance</b>
-          <p className='text-gray-600'>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Fuga soluta ipsam iste iure voluptas earum?</p>
+      <div className='flex flex-col md:flex-row text-sm mb-20 text-center'>
+        <div className='border px-10 md:px-16 py-8 sm:py-20 flex flex-col gap-5 transition-all duration-300 hover:bg-amber-50 group'>
+          <b className='group-hover:scale-110 duration-300 transition-all ease-in-out'>Quality Assurance</b>
+          <p className='text-gray-600 group-hover:scale-110 duration-300 transition-all ease-in-out'>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Fuga soluta ipsam iste iure voluptas earum?</p>
         </div>
 
-        <div className='border px-10 md:px-16 py-8 sm:py-20 flex flex-col gap-5'>
-          <b>Convinience</b>
-          <p className='text-gray-600'>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Fuga soluta ipsam iste iure voluptas earum?</p>
+        <div className='border px-10 md:px-16 py-8 sm:py-20 flex flex-col gap-5 transition-all duration-300 hover:bg-amber-50 group'>
+          <b className='group-hover:scale-110 duration-300 transition-all ease-in-out'>Convinience</b>
+          <p className='text-gray-600 group-hover:scale-110 duration-300 transition-all ease-in-out'>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Fuga soluta ipsam iste iure voluptas earum?</p>
         </div>
 
-        <div className='border px-10 md:px-16 py-8 sm:py-20 flex flex-col gap-5'>
-          <b>Exceptional Customer Service</b>
-          <p className='text-gray-600'>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Fuga soluta ipsam iste iure voluptas earum?</p>
+        <div className='border px-10 md:px-16 py-8 sm:py-20 flex flex-col gap-5 transition-all duration-300 hover:bg-amber-50 group'>
+          <b className='group-hover:scale-110 duration-300 transition-all ease-in-out'>Exceptional Customer Service</b>
+          <p className='text-gray-600 group-hover:scale-110 duration-300 transition-all ease-in-out'>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Fuga soluta ipsam iste iure voluptas earum?</p>
         </div>
       </div>
 

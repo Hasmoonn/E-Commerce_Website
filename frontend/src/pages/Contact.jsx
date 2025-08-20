@@ -10,18 +10,18 @@ const Contact = () => {
         <Title text1={'CONTACT'} text2={'US'} />
       </div>
 
-      <div className='my-10 flex flex-col justify-center md:flex-row gap-10 mb-28'>
-        <img className='w-full md:max-w-[480px]' src={assets.contact_img} alt="" />
+      <div className='my-10 flex flex-col justify-center md:flex-row gap-10 mb-28 animate-fadeInDown'>
+        <img className='w-full md:max-w-[480px] object-cover object-center shadow-lg' src={assets.contact_image} alt="" />
 
         <div className='flex flex-col justify-center items-start gap-6'>
           <p className='font-semibold text-xl text-gray-600'>
             Our Store
           </p>
-          <p className='text-gray-500'>54709 Willims Station <br />Suite 350, Washington, USA</p>
-          <p className='text-gray-500'>Tel: (415) 555-0132 <br />Email: admin@gmail.com</p>
-          <p className='font-semibold text-xl text-gray-600'>Careers at Forever</p>
+          <p className='text-gray-500'>No. 25, Galle Road <br />Suite 3B, Colombo 04, Sri Lanka</p>
+          <p className='text-gray-500'>Tel: +94 (11) 234 5678 <br />Email: luxivo@gmail.com</p>
+          <p className='font-semibold text-xl text-gray-600'>Careers at Luxivo</p>
           <p className='text-gray-500'>Learn more about our teams and job opening.</p>
-          <button className='border border-black px-8 py-4 text-sm transition-all duration-500 hover:bg-black hover:text-white'>Explore Jobs</button>
+          <button className='border border-amber-500 px-8 py-4 text-sm transition-all duration-500 hover:bg-amber-500'>Explore Jobs</button>
         </div>
         
       </div>

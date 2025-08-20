@@ -98,6 +98,8 @@ const PlaceOrder = () => {
         default: 
           break;
       }
+
+      scrollTo(0, 0)
       
 
     } catch (error) {
@@ -111,7 +113,7 @@ const PlaceOrder = () => {
   return ( loading ? (skeletonLoader()) : (
     <form onSubmit={onSubmitHandler} className='flex flex-col sm:flex-row justify-between gap-4 pt-5 sm:pt-14 min-h-[80vh] border-t'>
       {/* left side  */}
-      <div className='flex flex-col gap-4 w-full sm:max-w-[480px]'>
+      <div className='flex flex-col gap-4 w-full sm:max-w-[480px] border-2 border-gray-400 rounded-md p-3'>
         <div className='text-xl sm:text-2xl my-3'>
           <Title text1={'DELIVERY'} text2={'INFORMATION'} /> 
         </div>
@@ -135,7 +137,7 @@ const PlaceOrder = () => {
           <input onChange={onChangeHandler} name='country' value={formData.country} type="text" placeholder='Country' className='border border-gray-300 rounded py-1.5 px-3.5 w-full' required />
         </div>
 
-        <input onChange={onChangeHandler} name='phone' value={formData.phone} type="number" placeholder='Phone No' className='border border-gray-300 rounded py-1.5 px-3.5 w-full' required />
+        <input onChange={onChangeHandler} name='phone' value={formData.phone} type="number" placeholder='Phone No' className='border border-gray-300 rounded py-1.5 px-3.5 w-full mb-0' required />
       </div>
 
       {/* right side  */}
@@ -161,7 +163,7 @@ const PlaceOrder = () => {
           </div>
 
           <div className='w-full text-end mt-8'>
-            <button type='submit' className='bg-black text-white px-16 py-3 text-sm'>PLACE ORDER</button>
+            <button type='submit' className='bg-amber-600 text-white px-16 py-3 text-sm'>PLACE ORDER</button>
           </div>
         </div>
       </div>
