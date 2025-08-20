@@ -72,6 +72,12 @@ const Add = ({token}) => {
     loading ? (skeletonLoader()) : (
     <form onSubmit={onSubmitHandler} className='flex w-full flex-col gap-3 items-start'>
       <div>
+
+        <div className='mb-4 inline-flex gap-3 items-center'>
+          <h3 className='font-semibold text-amber-500'>Add Product</h3>
+          <hr className='w-8 h-1 rounded-md bg-amber-500'/>
+        </div>
+
         <p className='mb-2'>Upload Image</p>
 
         <div className='flex gap-2'>
@@ -142,23 +148,23 @@ const Add = ({token}) => {
 
         <div className='flex gap-3 text-xs sm:text-base'>
           <div onClick={() => setSizes(prev => prev.includes('S') ? prev.filter(item => item !== "S") : [...prev, 'S'])}>
-            <p className={`${ sizes.includes('S') ? 'bg-pink-100' : 'bg-slate-200' } px-3 py-1 cursor-pointer`}>S</p>
+            <p className={`${ sizes.includes('S') ? 'bg-amber-300' : 'bg-slate-200' } px-3 py-1 cursor-pointer`}>S</p>
           </div>
 
           <div onClick={() => setSizes(prev => prev.includes('M') ? prev.filter(item => item !== "M") : [...prev, 'M'])}>
-            <p className={`${ sizes.includes('M') ? 'bg-pink-100' : 'bg-slate-200' } px-3 py-1 cursor-pointer`}>M</p>
+            <p className={`${ sizes.includes('M') ? 'bg-amber-300' : 'bg-slate-200' } px-3 py-1 cursor-pointer`}>M</p>
           </div>
 
           <div onClick={() => setSizes(prev => prev.includes('L') ? prev.filter(item => item !== "L") : [...prev, 'L'])}>
-            <p className={`${ sizes.includes('L') ? 'bg-pink-100' : 'bg-slate-200' } px-3 py-1 cursor-pointer`}>L</p>
+            <p className={`${ sizes.includes('L') ? 'bg-amber-300' : 'bg-slate-200' } px-3 py-1 cursor-pointer`}>L</p>
           </div>
 
           <div onClick={() => setSizes(prev => prev.includes('XL') ? prev.filter(item => item !== "XL") : [...prev, 'XL'])}>
-            <p className={`${ sizes.includes('XL') ? 'bg-pink-100' : 'bg-slate-200' } px-3 py-1 cursor-pointer`}>XL</p>
+            <p className={`${ sizes.includes('XL') ? 'bg-amber-300' : 'bg-slate-200' } px-3 py-1 cursor-pointer`}>XL</p>
           </div>
 
           <div onClick={() => setSizes(prev => prev.includes('XXL') ? prev.filter(item => item !== "XXL") : [...prev, 'XXL'])}>
-            <p className={`${ sizes.includes('XXL') ? 'bg-pink-100' : 'bg-slate-200' } px-3 py-1 cursor-pointer`}>XXL</p>
+            <p className={`${ sizes.includes('XXL') ? 'bg-amber-300' : 'bg-slate-200' } px-3 py-1 cursor-pointer`}>XXL</p>
           </div>
         </div>
       </div>
@@ -169,7 +175,7 @@ const Add = ({token}) => {
         <label className='cursor-pointer' htmlFor="bestseller">Add to bestseller</label>
       </div>
 
-      <button type='submit' className='w-28 py-3 mt-4 bg-black text-white'>ADD</button>
+      <button type='submit' className='w-28 py-3 mt-4 bg-gray-700 hover:bg-gray-600 duration-300 transition text-white'>ADD</button>
     </form> )
   )
 }

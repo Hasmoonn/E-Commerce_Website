@@ -61,13 +61,16 @@ const Orders = ({token}) => {
 
   return (
     <div>
-      <h3>Order Page</h3>
+      <div className='mb-2 inline-flex gap-3 items-center'>
+        <h3 className='font-semibold text-amber-500'>Order Page</h3>
+        <hr className='w-8 h-1 rounded-md bg-amber-500'/>
+      </div>
 
       <div>
         {
           loading ? (skeletonLoader()) : (orders.map((order, index) => (
-            <div className={'grid grid-cols-1 sm:grid-cols-[0.5fr_2fr_1fr] lg:grid-cols-[0.5fr_2fr_1fr_1fr_1fr] gap-3 items-start border-2 border-gray-200 p-5 md:p-8 my-3 md:my-4 text-xs sm:text-sm text-gray-700'} key={index}>
-              <img className='w-12' src={assets.parcel_icon} alt="" />
+            <div className={'grid grid-cols-1 sm:grid-cols-[0.5fr_2fr_1fr] lg:grid-cols-[0.5fr_2fr_1fr_1fr_1fr] gap-3 items-start border-2 rounded-sm border-gray-200 p-5 md:p-8 shadow-inner my-3 md:my-4 text-xs sm:text-sm text-gray-700'} key={index}>
+              <img className='w-12 border-amber-400 border rounded-sm' src={assets.parcel_icon} alt="" />
               <div>
                 <div>
                 {
@@ -109,7 +112,7 @@ const Orders = ({token}) => {
               <p>Date : {new Date(order.date).toDateString()}</p>
             </div>
 
-            <p className='text-sm sm:text-[15px]'>{currency}{order.amount}</p>
+            <p className='text-sm sm:text-[15px] text-amber-600 font-semibold'>{currency}{order.amount}</p>
 
             <select onChange={(e) => statusHandler(e, order._id)} value={order.status} className='p-2 font-semibold'>
               <option value="Order Placed">Order Placed</option>
