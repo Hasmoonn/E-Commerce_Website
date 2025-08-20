@@ -1,4 +1,3 @@
-import logo from './logo.png'
 import cart_icon from './cart_icon.png'
 import bin_icon from './bin_icon.png'
 import dropdown_icon from './dropdown_icon.png'
@@ -18,7 +17,6 @@ import contact_image from './image.png'
 import logo_img from './log.png'
 
 export const assets = {
-    logo,
     logo_img,
     cart_icon,
     dropdown_icon,
