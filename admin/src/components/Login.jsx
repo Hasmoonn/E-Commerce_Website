@@ -35,8 +35,8 @@ const Login = ({setToken}) => {
   return (
     loading ? (skeletonLoader()) : (
     <div className="min-h-screen flex items-center justify-center w-full">
-      <div className="bg-white shadow-md rounded-lg px-8 py-6 max-w-md">
-        <h1 className="text-2xl font-bold mb-4">Admin Panel</h1>
+      <div className="bg-white shadow-md rounded-lg px-8 py-6 max-w-md border-2 border-amber-700">
+        <h1 className="text-2xl font-bold mb-4 text-amber-800">Admin Panel</h1>
 
         <form onSubmit={onSubmitHandler}>
           <div className="mb-3 min-w-72">
@@ -49,7 +49,7 @@ const Login = ({setToken}) => {
               onChange={(e) => setEmail(e.target.value)}
               placeholder="your@gmail.com"
               required
-              className="rounded-md w-full px-3 py-2 border border-gray-300 outline-none"
+              className="rounded-md w-full px-3 outline-amber-700 py-2 border border-gray-300"
             />
           </div>
 
@@ -61,11 +61,11 @@ const Login = ({setToken}) => {
               value={password}
               onChange={(e) => setPassword(e.target.value)}
               required
-              className="rounded-md w-full px-3 py-2 border border-gray-300 outline-none"
+              className="rounded-md w-full px-3 outline-amber-700 py-2 border border-gray-300"
             />
           </div>
 
-          <button type="submit" className="mt-2 w-full bg-black text-white py-2 rounded-md">Login</button>
+          <button type="submit" className="mt-2 w-full bg-gray-800 text-white py-2 rounded-md">Login</button>
         </form>
       </div>
     </div>
